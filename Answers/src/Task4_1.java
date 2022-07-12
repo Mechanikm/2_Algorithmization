@@ -16,26 +16,26 @@ public class Task4_1 {
             int numberB = scan.nextInt();
             System.out.println();
 
-            int answer = nok(numberA, numberB);
+            int answer = lcm(numberA, numberB);
             System.out.println("Least common multiple for A and B is: " + answer);
         }
     }
 
-    private static int nod(int a, int b) {
-        int nod = 1;
+    private static int gcd(int a, int b) {
+        int gcd = 1;
 
         for (int i = 1; i <= Math.min(a, b); i++) {
             if (a % i == 0 && b % i == 0) {
-                nod = i;
+                gcd = i;
             }
         }
-        return nod;
+        return gcd;
     }
 
-    private static int nok(int a, int b) {
+    private static int lcm(int a, int b) {
 
-        int nok = a * b / nod(a, b);
+        int lcm = a * b / gcd(a, b);
 
-        return nok;
+        return lcm;
     }
 }
